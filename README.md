@@ -8,6 +8,7 @@ Table of contents.
 - [Print Variables](#how-to-print-variables)
 - [Constants](#constants)
 - [Magic Constants](#magic-constants)
+- [Data Types](#data-types)
 
 ## How to install PHP
 
@@ -147,3 +148,29 @@ __NAMESPACE__;
 ```
 
 This magic constant returns the namespace it is used in.
+
+## Data Types
+
+Scalar Types:
+
+- Integer
+- Float
+- String
+- Boolean
+
+Compound Types:
+
+- Array
+- Object
+
+Special Types:
+
+- Resource
+- NULL
+
+**Type casting in PHP.** This is done by adding the desired type in front of the variable, e.g. `(int) $var`.
+
+**Strict types** are a feature introduced in PHP 7 which forces type-checking on function arguments. This means that if
+a function is declared with strict types enabled, it will only accept arguments of the specified type. If an argument of
+a different type is passed, an error will be thrown. To enable strict types, add `declare(strict_types=1);` at the top
+of the file.
