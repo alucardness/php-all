@@ -9,6 +9,7 @@ Table of contents.
 - [Constants](#constants)
 - [Magic Constants](#magic-constants)
 - [Data Types](#data-types)
+- [Array](#array)
 
 ## How to install PHP
 
@@ -174,3 +175,34 @@ Special Types:
 a function is declared with strict types enabled, it will only accept arguments of the specified type. If an argument of
 a different type is passed, an error will be thrown. To enable strict types, add `declare(strict_types=1);` at the top
 of the file.
+
+## Array
+
+1. Indexed Arrays:
+
+```php
+    $cars = array("Volvo", "BMW", "Toyota");
+```
+
+2. Associative Arrays:
+
+```php
+   $age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+```
+
+3. Multidimensional Arrays:
+
+```php
+  $cars = array (
+      array("Volvo", 22, 18),
+      array("BMW", 15, 13),
+      array("Toyota", 5, 2)
+  );
+```
+
+Short and faster way to push an element into an array
+
+```php
+  $heroes = [];
+  $heroes[] = "Batman";
+```
