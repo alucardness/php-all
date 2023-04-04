@@ -269,3 +269,31 @@ proceeding with the further operations. This operator is also known as the "Null
 $name = $_GET['name'] ?? 'Guest';
 echo "Hello $name";
 ```
+
+- Operator Precedence & Associativity in PHP
+
+Operator | Precedence | Associativity
+--- | --- | --- 
+`()` | Highest | Left to Right
+`**` | Right to Left | Right to Left
+`*`, `/`, `%` | Left to Right | Left to Right
+`+`, `-` | Left to Right | Left to Right
+`.` | Left to Right | Left to Right
+`<<`, `>>` | Left to Right | Left to Right
+`<`, `<=`, `>`, `>=` | Left to Right | Left to Right
+`==`, `!=`, `===`, `!==` | Left to Right | Left to Right
+`&` | Left to Right | Left to Right
+`^` | Left to Right | Left to Right
+`|` | Left to Right | Left to Right 
+`&&` | Left to Right | Left to Right
+`||` | Left to Right | Left to Right 
+`?:` | Right to Left | Right to Left
+`=`, `+=`, `-=`, `*=`, `/=`, `%=`, `.=` | Right to Left | Right to Left
+`,` | Left to Right | Left to Right
+
+**Precedence** is the order in which operations are evaluated. In PHP, operators have a certain precedence and associativity
+that determines the order in which operations are evaluated.
+
+**Associativity** determines the order in which operations with the same precedence are evaluated. In PHP, operators are
+either left-associative or right-associative. Left-associative operators are evaluated from left to right, while
+right-associative operators are evaluated from right to left.
