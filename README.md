@@ -259,3 +259,13 @@ $command = `ls -a`;
 $hero = new Hero();
 $isHero = $hero instanceof Hero;
 ```
+
+- Null Safe Operator (??)
+
+The Null Safe Operator (??) is a new operator introduced in PHP 7. It is used to check if a value is null before
+proceeding with the further operations. This operator is also known as the "Null Coalescing Operator".
+
+```php
+$name = $_GET['name'] ?? 'Guest';
+echo "Hello $name";
+```
