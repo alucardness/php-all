@@ -11,6 +11,7 @@ Table of contents.
 - [Data Types](#data-types)
 - [Arrays](#arrays)
 - [Expressions](#expressions)
+- [Operators](#operators)
 
 ## How to install PHP
 
@@ -227,3 +228,34 @@ Examples of expressions in PHP include:
 - Performing a calculation: `$y = $x + 10;`
 - Comparing two values: `if ($x == 5) { ... }`
 - Using a ternary operator: `$z = ($x > 10) ? 'yes' : 'no';`
+
+## Operators
+
+- Assignment Operators:
+  =, +=, -=, *=, /=, .=, %=, &=, |=, ^=, <<=, >>=
+- String Operators:
+  . (concatenation), .=
+- Comparison Operators:
+  ==, ===, !=, <>, !==, <, >, <=, >=
+- Error Control Operators:
+  @
+- Increment/Decrement Operators:
+  ++, --
+- Logical Operators:
+  and, or, xor, &&, ||, !
+- Bitwise Operators:
+  &, |, ~, ^, <<, >>
+- Array Operators:
+  +, ==, ===, !=, <>, !==
+- Execution Operators:
+
+```php
+$command = `ls -a`;    
+```
+
+- Type Operators:
+
+```php
+$hero = new Hero();
+$isHero = $hero instanceof Hero;
+```
