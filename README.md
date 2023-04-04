@@ -5,7 +5,9 @@
 Table of contents.
 
 - [How to install PHP](#how-to-install-php)
-- [Print variables](#how-to-print-variables)
+- [Print Variables](#how-to-print-variables)
+- [Constants](#constants)
+- [Magic Constants](#magic-constants)
 
 ## How to install PHP
 
@@ -75,3 +77,73 @@ print "Batman "." Superman";
 
 `print` is also a language construct used to output one or more strings. It is slower than echo, but it returns a value
 of 1 which can be used in expressions.
+
+## Constants
+
+```php
+define("HERO", "Superman");
+```
+
+`define()` is a PHP function used to define constants. It takes two parameters, the first being the name of the constant
+and the second being its value. Constants defined using `define()` are global and can be accessed anywhere in the
+script.
+
+```php
+const HERO = "Superman";
+```
+
+`const` is a keyword used to define constants in PHP. It works similarly to `define()`, but constants defined using
+const are limited to the scope in which they are declared. They cannot be accessed outside of that scope. Additionally,
+constants defined using const must be assigned a value at the time of declaration.
+
+In summary, `define()` is used to define global constants while const is used to define local constants.
+
+## Magic Constants
+
+```php
+__LINE__;
+```
+
+This magic constant returns the current line number of the file it is used in.
+
+```php
+__FILE__;
+```
+
+This magic constant returns the full path and filename of the file it is used in.
+
+```php
+__DIR__;
+```
+
+This magic constant returns the directory of the file it is used in.
+
+```php
+__FUNCTION__;
+```
+
+This magic constant returns the function name it is used in.
+
+```php
+__CLASS__;
+```
+
+This magic constant returns the class name it is used in.
+
+```php
+__TRAIT__;
+```
+
+This magic constant returns the trait name it is used in.
+
+```php
+__METHOD__;
+```
+
+This magic constant returns the method name it is used in.
+
+```php
+__NAMESPACE__;
+```
+
+This magic constant returns the namespace it is used in.
