@@ -272,27 +272,25 @@ echo "Hello $name";
 
 - Operator Precedence & Associativity in PHP
 
-Operator | Precedence | Associativity
---- | --- | --- 
-`()` | Highest | Left to Right
-`**` | Right to Left | Right to Left
-`*`, `/`, `%` | Left to Right | Left to Right
-`+`, `-` | Left to Right | Left to Right
-`.` | Left to Right | Left to Right
-`<<`, `>>` | Left to Right | Left to Right
-`<`, `<=`, `>`, `>=` | Left to Right | Left to Right
-`==`, `!=`, `===`, `!==` | Left to Right | Left to Right
-`&` | Left to Right | Left to Right
-`^` | Left to Right | Left to Right
-`|` | Left to Right | Left to Right 
-`&&` | Left to Right | Left to Right
-`||` | Left to Right | Left to Right 
-`?:` | Right to Left | Right to Left
-`=`, `+=`, `-=`, `*=`, `/=`, `%=`, `.=` | Right to Left | Right to Left
-`,` | Left to Right | Left to Right
+| Operator | Description | Associativity |
+| -------- | ----------- | ------------- |
+| `()`     | Parentheses | Left-to-right |
+| `**`     | Exponentiation | Right-to-left |
+| `!`      | Not | Right-to-left |
+| `*`, `/`, `%` | Multiplication, Division, Modulus | Left-to-right |
+| `+`, `-` | Addition, Subtraction | Left-to-right |
+| `<`, `<=`, `>`, `>=`, `<>` | Comparison | Left-to-right |
+| `==`, `!=`, `===`, `!==` | Equality | Left-to-right |
+| `&&`     | Logical AND | Left-to-right |
+| &vert;&vert;   | Logical OR | Left-to-right |
+| `?:`     | Ternary | Right-to-left |
+| `=`, `+=`, `-=`, `*=`, `/=`, `%=` | Assignment | Right-to-left |
+| `and`    | And | Left-to-right |
+| `xor`    | Xor | Left-to-right |
+| `or`     | Or | Left-to-right |
 
-**Precedence** is the order in which operations are evaluated. In PHP, operators have a certain precedence and associativity
-that determines the order in which operations are evaluated.
+**Precedence** is the order in which operations are evaluated. In PHP, operators have a certain precedence and
+associativity that determines the order in which operations are evaluated.
 
 **Associativity** determines the order in which operations with the same precedence are evaluated. In PHP, operators are
 either left-associative or right-associative. Left-associative operators are evaluated from left to right, while
