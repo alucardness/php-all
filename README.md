@@ -9,7 +9,7 @@ Table of contents.
 - [Constants](#constants)
 - [Magic Constants](#magic-constants)
 - [Data Types](#data-types)
-- [Array](#array)
+- [Arrays](#arrays)
 
 ## How to install PHP
 
@@ -176,7 +176,7 @@ a function is declared with strict types enabled, it will only accept arguments 
 a different type is passed, an error will be thrown. To enable strict types, add `declare(strict_types=1);` at the top
 of the file.
 
-## Array
+## Arrays
 
 1. Indexed Arrays:
 
@@ -206,3 +206,11 @@ Short and faster way to push an element into an array
   $heroes = [];
   $heroes[] = "Batman";
 ```
+
+Working with arrays:
+
+`print_r()` is a PHP function used to print out information about a variable in an easy-to-read format. It can be used
+to print out arrays, objects, and other values.
+
+`unset()` is a PHP function used to remove a variable or an element from an array. It will unset the variable or element
+and make it undefined.
