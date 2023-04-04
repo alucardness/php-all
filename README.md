@@ -10,6 +10,7 @@ Table of contents.
 - [Magic Constants](#magic-constants)
 - [Data Types](#data-types)
 - [Arrays](#arrays)
+- [Expressions](#expressions)
 
 ## How to install PHP
 
@@ -214,3 +215,15 @@ to print out arrays, objects, and other values.
 
 `unset()` is a PHP function used to remove a variable or an element from an array. It will unset the variable or element
 and make it undefined.
+
+## Expressions
+
+Expressions in PHP are a combination of variables, constants, and operators that evaluate to a value. They can be used
+to assign values to variables, perform calculations, compare values, and more.
+
+Examples of expressions in PHP include:
+
+- Assigning a value to a variable: `$x = 5;`
+- Performing a calculation: `$y = $x + 10;`
+- Comparing two values: `if ($x == 5) { ... }`
+- Using a ternary operator: `$z = ($x > 10) ? 'yes' : 'no';`
