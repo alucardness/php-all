@@ -23,6 +23,7 @@ Table of contents.
 - [Errors](#errors)
 - [Error Handling](#error-handling)
 - [Working with Files](#working-with-files)
+- [Setup Project](#setup-project)
 
 ## How to install PHP
 
@@ -508,3 +509,81 @@ if (file_exists($fileName)) {
     unlink($fileName);
 }
 ```
+
+## Setup Project
+
+- Docker
+    - file structure
+
+    ```
+    ├── src/
+    │   ├── index.php
+    │   └── ...
+    └── docker/
+        ├── docker-compose.yaml
+        ├── nginx/
+            └── nginx.conf
+        └── Dockerfile
+    ```
+
+    - Docker file
+    ```dockerfile
+        FROM php:8.0.2-fpm
+
+        RUN apt-get update && apt-get install -y \
+        git \
+        curl \
+        zip \
+        unzip
+        
+        WORKDIR /var/www
+    ```
+
+    - nginx.conf
+    ```nginx configuration
+        server {
+            listen 80;
+            index index.php;
+            error_log /var/log/nginx/error.log;
+            access_log /var/log/nginx/access.log;
+            error_page 404 /index.php;
+            root /var/www/public;
+            location ~ \.php$ {
+                try_files $uri =404;
+                fastcgi_pass app:9000;
+                fastcgi_index index.php;
+                include fastcgi_params;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            }
+            location / {
+                try_files $uri $uri/ /index.php?$query_string;
+                gzip_static on;
+            }
+        }
+    ```
+
+    - docker-compose.yaml
+    ```yaml
+        version: '3.8'
+  
+        services:
+          app:
+            build:
+              context: ./
+              dockerfile: Dockerfile
+            container_name: php-framework-app
+            restart: always
+            working_dir: /var/www/
+            volumes:
+              - ../src:/var/www
+        
+          nginx:
+            image: nginx:1.19-alpine
+            container_name: php-hero-container
+            restart: always
+            ports:
+              - "8000:80"
+            volumes:
+              - ../src:/var/www
+              - ./nginx:/etc/nginx/conf.d
+    ```
