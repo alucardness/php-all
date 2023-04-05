@@ -14,6 +14,7 @@ Table of contents.
 - [Operators](#operators)
 - [Control Structures](#control-structures)
 - [Loops](#loops)
+- [Match](#match)
 
 ## How to install PHP
 
@@ -311,3 +312,10 @@ right-associative operators are evaluated from right to left.
 * `foreach` loop - loops through a block of code for each element in an array
 * `while` loop - loops through a block of code while a specified condition is true
 * `do...while` loop - loops through a block of code once, and then repeats the loop while a specified condition is true
+* `break` - used to break out of a loop
+* `continue` - used to skip the current iteration of a loop and continue with the next iteration
+
+## Match
+
+**match** is a simpler regular expression syntax than **preg_match**, and is generally faster in PHP. It returns an
+array of matches or false if no matches are found.
