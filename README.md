@@ -22,6 +22,7 @@ Table of contents.
 - [PHP Configuration](#php-configuration)
 - [Errors](#errors)
 - [Error Handling](#error-handling)
+- [Working with Files](#working-with-files)
 
 ## How to install PHP
 
@@ -467,4 +468,43 @@ set_error_handler("customError");
 
 // Trigger error
 echo($test);
+```
+
+## Working with Files
+
+- Create Folder
+
+```php
+$folderName = 'myFolder';
+if (!is_dir($folderName)) {
+    mkdir($folderName, 0777, true);
+}
+```
+
+- Delete Folder
+
+```php
+$folderName = 'myFolder';
+if (is_dir($folderName)) {
+    rmdir($folderName);
+}
+```
+
+- Read File
+
+```php
+$fileName = 'myFile.txt';
+$fileHandle = fopen($fileName, 'r');
+$fileContent = fread($fileHandle, filesize($fileName));
+fclose($fileHandle);
+echo $fileContent;
+```
+
+- Delete File
+
+```php
+$fileName = 'myFile.txt';
+if (file_exists($fileName)) {
+    unlink($fileName);
+}
 ```
