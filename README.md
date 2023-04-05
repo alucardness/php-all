@@ -17,6 +17,7 @@ Table of contents.
 - [Match](#match)
 - [Tickable](#tickable)
 - [Include Files](#include-files)
+- [Splat Operator](#splat-operator)
 
 ## How to install PHP
 
@@ -376,3 +377,19 @@ the output of the script.
 **Require**:
 
 - If an error occurs, the script will stop executing.
+
+## Splat Operator
+
+The splat operator (`...`) is a new operator introduced in PHP 7. It allows for the expansion of an array into
+individual parameters when calling a function.
+
+For example, if you have an array `$arr = [1, 2, 3]`, you can use the splat operator to pass each element of the array
+as a separate parameter to a function:
+
+```php
+function sum(...$numbers) {
+    return array_sum($numbers);
+}
+
+$sum = sum(1, 5, 7, 9, 23);
+```
