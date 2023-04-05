@@ -18,6 +18,7 @@ Table of contents.
 - [Tickable](#tickable)
 - [Include Files](#include-files)
 - [Splat Operator](#splat-operator)
+- [Anonymous and Arrow Functions](#anonymous-and-arrow-functions)
 
 ## How to install PHP
 
@@ -392,4 +393,29 @@ function sum(...$numbers) {
 }
 
 $sum = sum(1, 5, 7, 9, 23);
+```
+
+## Anonymous and Arrow Functions
+
+- Anonymous Functions in PHP
+
+An anonymous function, also known as a closure, is a function that has no name and can be stored in a variable.
+Anonymous functions are often used as callback functions, or for creating function scopes.
+
+```php
+$greet = function($name) {
+    printf("Hello %s\r\n", $name);
+};
+
+$greet('World');
+```
+
+- Arrow Functions in PHP
+
+Arrow functions are a shorthand syntax for writing anonymous functions in PHP. They allow you to write concise,
+single-line functions that can be used as callbacks or passed as arguments to other functions.
+
+```php
+$add = fn($a, $b) => $a + $b;
+echo $add(2, 3); // Outputs 5
 ```
