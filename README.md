@@ -15,6 +15,7 @@ Table of contents.
 - [Control Structures](#control-structures)
 - [Loops](#loops)
 - [Match](#match)
+- [Tickable](#tickable)
 
 ## How to install PHP
 
@@ -319,3 +320,41 @@ right-associative operators are evaluated from right to left.
 
 **match** is a simpler regular expression syntax than **preg_match**, and is generally faster in PHP. It returns an
 array of matches or false if no matches are found.
+
+## Tickable
+
+```php
+// Register a tick function
+declare(ticks=1);
+
+// Function to be called on each tick event
+function tick_handler()
+{
+    echo "tick_handler() called\n";
+}
+
+register_tick_function('tick_handler');
+
+$a = 1;
+
+if ($a > 0) {
+    $a += 2;
+    print($a . "\n");
+}
+```
+
+The `tick` function in PHP is a callback function that is executed at the beginning of each tick. It is called after the
+script is loaded and before any other code is executed. This allows for code to be executed at specific intervals, such
+as every second or every minute.
+
+The `tick` function can be used to perform tasks such as monitoring the system, logging events, or performing
+maintenance tasks. It can also be used to execute code on a regular basis, such as checking for new data or updating a
+database.
+
+To use the `tick` function, it must first be registered with the `register_tick_function()` function. This function
+takes a single parameter, which is the name of the function to be called. The `tick` function will then be called at the
+start of each tick.
+
+It is important to note that the `tick` function should not take too long to execute, as it will delay the execution of
+the rest of the script. Additionally, the `tick` function should not produce any output, as this could interfere with
+the output of the script.
