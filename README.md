@@ -19,6 +19,7 @@ Table of contents.
 - [Include Files](#include-files)
 - [Splat Operator](#splat-operator)
 - [Anonymous and Arrow Functions](#anonymous-and-arrow-functions)
+- [PHP Configuration](#php-configuration)
 
 ## How to install PHP
 
@@ -419,3 +420,11 @@ single-line functions that can be used as callbacks or passed as arguments to ot
 $add = fn($a, $b) => $a + $b;
 echo $add(2, 3); // Outputs 5
 ```
+
+## PHP Configuration
+
+The `ini_get()` function is used to get the value of a configuration option from `php.ini`. It returns the value of the
+configuration option as a string on success, or an empty string on failure.
+
+`ini_set()` is a PHP function used to set a configuration option in the `php.ini` file at runtime. It allows you to change
+the value of a configuration option without having to edit and save the `php.ini` file.
