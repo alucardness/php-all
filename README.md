@@ -20,6 +20,8 @@ Table of contents.
 - [Splat Operator](#splat-operator)
 - [Anonymous and Arrow Functions](#anonymous-and-arrow-functions)
 - [PHP Configuration](#php-configuration)
+- [Errors](#errors)
+- [Error Handling](#error-handling)
 
 ## How to install PHP
 
@@ -426,5 +428,43 @@ echo $add(2, 3); // Outputs 5
 The `ini_get()` function is used to get the value of a configuration option from `php.ini`. It returns the value of the
 configuration option as a string on success, or an empty string on failure.
 
-`ini_set()` is a PHP function used to set a configuration option in the `php.ini` file at runtime. It allows you to change
-the value of a configuration option without having to edit and save the `php.ini` file.
+`ini_set()` is a PHP function used to set a configuration option in the `php.ini` file at runtime. It allows you to
+change the value of a configuration option without having to edit and save the `php.ini` file.
+
+## Errors
+
+### Types of Errors
+
+1. **Parse Error**: This occurs when the syntax of a code is incorrect.
+2. **Fatal Error**: This occurs when a critical error causes the program to stop unexpectedly.
+3. **Warning Error**: This occurs when there is an issue with the code, but it does not cause the program to stop.
+4. **Notice Error**: This occurs when the code encounters an unexpected condition that is not necessarily an error.
+5. **Strict Error**: This occurs when the code encounters a deprecated feature or an incompatible API usage.
+6. **Recoverable Error**: This occurs when the code encounters an error that can be recovered from.
+
+## Error Handling
+
+Show all Errors
+
+```php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+```
+
+Customer Error Hanlder
+
+```php
+// Custom error handler function
+function customError($errno, $errstr) {
+  echo "<b>Error:</b> [$errno] $errstr<br>";
+  echo "Ending Script";
+  die();
+}
+
+// Set error handler
+set_error_handler("customError");
+
+// Trigger error
+echo($test);
+```
