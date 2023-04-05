@@ -16,6 +16,7 @@ Table of contents.
 - [Loops](#loops)
 - [Match](#match)
 - [Tickable](#tickable)
+- [Include Files](#include-files)
 
 ## How to install PHP
 
@@ -358,3 +359,20 @@ start of each tick.
 It is important to note that the `tick` function should not take too long to execute, as it will delay the execution of
 the rest of the script. Additionally, the `tick` function should not produce any output, as this could interfere with
 the output of the script.
+
+## Include Files
+
+| Function | Description |
+| -------- | ----------- |
+| include  | Includes and evaluates a specified file. |
+| include_once | Includes and evaluates a specified file only once. |
+| require  | Includes and evaluates a specified file. |
+| require_once | Includes and evaluates a specified file only once. |
+
+**Include**:
+
+- If an error occurs, the script will continue to execute.
+
+**Require**:
+
+- If an error occurs, the script will stop executing.
