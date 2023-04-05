@@ -12,6 +12,8 @@ Table of contents.
 - [Arrays](#arrays)
 - [Expressions](#expressions)
 - [Operators](#operators)
+- [Control Structures](#control-structures)
+- [Loops](#loops)
 
 ## How to install PHP
 
@@ -295,3 +297,17 @@ associativity that determines the order in which operations are evaluated.
 **Associativity** determines the order in which operations with the same precedence are evaluated. In PHP, operators are
 either left-associative or right-associative. Left-associative operators are evaluated from left to right, while
 right-associative operators are evaluated from right to left.
+
+## Control Structures
+
+* `if` statement - executes a set of code if a specified condition is true
+* `else` statement - executes a set of code if the same condition is false
+* `elseif` statement - executes a set of code if a different condition is true
+* `switch` statement - selects one of many blocks of code to be executed
+
+## Loops
+
+* `for` loop - executes a block of code a specified number of times
+* `foreach` loop - loops through a block of code for each element in an array
+* `while` loop - loops through a block of code while a specified condition is true
+* `do...while` loop - loops through a block of code once, and then repeats the loop while a specified condition is true
