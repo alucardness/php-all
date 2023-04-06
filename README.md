@@ -24,6 +24,7 @@ Table of contents.
 - [Error Handling](#error-handling)
 - [Working with Files](#working-with-files)
 - [Setup Project](#setup-project)
+- [Coding Standards, Autoloading and Composer](#coding-standards-autoloading-and-composer)
 - Objects
     - [Chaining Methods](#chaining-methods)
     - [Constructor Property Promotion](#constructor-property-promotion)
@@ -590,6 +591,33 @@ if (file_exists($fileName)) {
               - ../src:/var/www
               - ./nginx:/etc/nginx/conf.d
     ```
+
+## Coding Standards, Autoloading and Composer
+
+- Autoloading and Composer
+
+1. Install composer.
+2. Include the autoloader.
+
+```php
+require_once __DIR__ . '/vendor/autoload.php';
+```
+
+3. Touch the composer.json file to automatically load all classes from app folder.
+
+```composer
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+```
+
+4. Clear the Composer's cache.
+
+```shell
+composer dump-autoload
+```
 
 ## Objects
 
