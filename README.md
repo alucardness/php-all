@@ -24,6 +24,8 @@ Table of contents.
 - [Error Handling](#error-handling)
 - [Working with Files](#working-with-files)
 - [Setup Project](#setup-project)
+- Objects
+    - [Chaining Methods](#chaining-methods)
 
 ## How to install PHP
 
@@ -531,10 +533,10 @@ if (file_exists($fileName)) {
         FROM php:8.0.2-fpm
 
         RUN apt-get update && apt-get install -y \
-        git \
-        curl \
-        zip \
-        unzip
+            git \
+            curl \
+            zip \
+            unzip
         
         WORKDIR /var/www
     ```
@@ -587,3 +589,30 @@ if (file_exists($fileName)) {
               - ../src:/var/www
               - ./nginx:/etc/nginx/conf.d
     ```
+
+## Objects
+
+### Chaining Methods
+
+```php
+class MyClass {
+  public function method1() {
+    // do something
+    return $this;
+  }
+  
+  public function method2() {
+    // do something
+    return $this;
+  }
+}
+
+$myObject = (new MyClass());
+$myObject->method1()->method2();
+```
+
+Chaining methods in PHP is a technique used to call multiple methods on an object or class in a single statement. This
+allows for more concise and readable code, as well as improved performance due to fewer lines of code being executed.
+
+To chain methods, the return value of one method must be an object or class that can accept the next method in the
+chain.
