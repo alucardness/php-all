@@ -26,6 +26,7 @@ Table of contents.
 - [Setup Project](#setup-project)
 - Objects
     - [Chaining Methods](#chaining-methods)
+    - [Constructor Property Promotion](#constructor-property-promotion)
 
 ## How to install PHP
 
@@ -616,3 +617,21 @@ allows for more concise and readable code, as well as improved performance due t
 
 To chain methods, the return value of one method must be an object or class that can accept the next method in the
 chain.
+
+### Constructor Property Promotion
+
+```php
+class Customer
+{
+    public function __construct(
+        public string $name, 
+        public string $email, 
+    ) {}
+}
+```
+
+Constructor property promotion is a feature of PHP that allows developers to assign values to class properties directly
+in the constructor. This eliminates the need to write out each property assignment individually, making code more
+concise and easier to read.
+
+**Available from php >= 8.0**
