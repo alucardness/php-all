@@ -32,6 +32,7 @@ Table of contents.
     - [Static Properties and Methods](#static-properties-and-methods)
     - [Encapsulation and Abstraction](#encapsulation-and-abstraction)
     - [Abstract Classes and Methods](#abstract-classes-and-methods)
+    - [Interfaces and Polymorphism](#interfaces-and-polymorphism)
 
 ## How to install PHP
 
@@ -790,3 +791,13 @@ abstract class Hero {
 _An abstract class in PHP is a class that cannot be instantiated, and must be extended by another class. Abstract
 classes are used to provide a base level of functionality that can be shared among multiple classes. They may contain
 abstract methods, which are methods without any implementation, and must be implemented by the extending class._
+
+### Interfaces and Polymorphism
+
+Abstraction classes and interfaces are both used to define abstractions in PHP. An abstraction class is a class that
+contains abstract methods, which must be implemented by any class that extends it. An interface is a contract between
+two objects, specifying that certain methods must be implemented by the implementing object.
+
+_Polymorphism in PHP is the ability of an object to take on different forms depending on the context. This allows for
+code reuse and flexibility when dealing with different types of objects. For example, a function may accept an object as
+an argument and then call different methods depending on the type of object passed in._
