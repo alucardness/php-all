@@ -29,6 +29,7 @@ Table of contents.
     - [Chaining Methods](#chaining-methods)
     - [Constructor Property Promotion](#constructor-property-promotion)
     - [Constants](#constants)
+    - [Static Properties and Methods](#static-properties-and-methods)
 
 ## How to install PHP
 
@@ -682,3 +683,44 @@ class Hero {
 echo Hero::HERO_NAME; // Superman
 echo Hero::class; // call class's full path
 ```
+
+### Static Properties and Methods
+
+```php
+class Hero {
+  // Static property
+  public static $universe = 'Marvel';
+  
+  // Static method
+  public static function getUniverse() {
+    return self::$universe;
+  }
+}
+
+// Accessing static property
+echo Hero::$universe; // Outputs: Marvel
+
+// Accessing static method
+echo Hero::getUniverse(); // Outputs: Marvel
+```
+
+Static properties and methods in PHP are class members that can be accessed without creating an instance of the class.
+They are declared using the static keyword, and they can be accessed using the scope resolution operator (::). Static
+properties and methods can be used to store and access data that is shared across all instances of a class.
+
+Static properties and methods can be used in a variety of ways in PHP. Here are some common use cases:
+
+1. Keeping track of global state: Static properties and methods can be used to keep track of global state, such as the
+   number of times a certain function has been called or the total number of objects created.
+
+2. Creating utility functions: Static methods can be used to create utility functions that don't need to be
+   instantiated. For example, a static method could be used to generate a random string or check if a given value is
+   valid.
+
+3. Caching data: Static properties can be used to cache data that doesn't change often, such as configuration settings
+   or database query results. This can help improve performance by avoiding unnecessary database queries or
+   calculations.
+
+4. Implementing singleton classes: Static methods can be used to implement singleton classes, which are classes that can
+   only have one instance at any given time. This can be useful for implementing global objects, such as a logger or a
+   configuration manager.
