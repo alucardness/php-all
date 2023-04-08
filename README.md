@@ -36,6 +36,7 @@ Table of contents.
     - [Magic Methods](#magic-methods)
     - [Late Static Binding](#late-static-binding)
     - [Traits](#traits)
+    - [Anonymous Class](#anonymous-class)
 
 ## How to install PHP
 
@@ -936,3 +937,23 @@ class Hero
 $superman = new Hero();
 echo $superman->getHeroSpeed();
 ```
+
+### Anonymous Class
+
+```php
+$hero = new class {
+  public $name;
+  public $age;
+  public $superpower;
+  
+  public function __construct($name, $age, $superpower) {
+    $this->name = $name;
+    $this->age = $age;
+    $this->superpower = $superpower;
+  }
+};
+```
+
+_Anonymous classes in PHP are used to create objects without having to define a class first. This can be useful for
+creating simple, one-off objects that don't need to be reused or extended. Anonymous classes can also be used to quickly
+mock objects for testing purposes._
