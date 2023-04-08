@@ -28,6 +28,7 @@ Table of contents.
 - Objects
     - [Chaining Methods](#chaining-methods)
     - [Constructor Property Promotion](#constructor-property-promotion)
+    - [Constants](#constants)
 
 ## How to install PHP
 
@@ -663,3 +664,20 @@ in the constructor. This eliminates the need to write out each property assignme
 concise and easier to read.
 
 **Available from php >= 8.0**
+
+### Constants
+
+```php
+class Hero {
+  const HERO_NAME = 'Superman';
+  const HERO_POWER = 'Flight';
+  const HERO_WEAPON = 'Heat Vision';
+  private const HERO_SECRET = 'Kryptonite';
+  
+  public function getSecret() {
+    return self::HERO_SECRET;
+  }
+}
+
+echo Hero::HERO_NAME; // Superman
+```
