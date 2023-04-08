@@ -33,6 +33,7 @@ Table of contents.
     - [Encapsulation and Abstraction](#encapsulation-and-abstraction)
     - [Abstract Classes and Methods](#abstract-classes-and-methods)
     - [Interfaces and Polymorphism](#interfaces-and-polymorphism)
+    - [Magic Methods](#magic-methods)
 
 ## How to install PHP
 
@@ -801,3 +802,52 @@ two objects, specifying that certain methods must be implemented by the implemen
 _Polymorphism in PHP is the ability of an object to take on different forms depending on the context. This allows for
 code reuse and flexibility when dealing with different types of objects. For example, a function may accept an object as
 an argument and then call different methods depending on the type of object passed in._
+
+### Magic Methods
+
+```php
+// Constructor method
+__construct()
+
+// Destructor method
+__destruct()
+
+// Magic method that is triggered when invoking inaccessible methods in an object context
+__call()
+
+// Magic method that is triggered when invoking inaccessible methods in a static context
+__callStatic()
+
+// Magic method for getting properties of an object
+__get()
+
+// Magic method for setting properties of an object
+__set()
+
+// Magic method to check if a property is set
+__isset()
+
+// Magic method to unset a property
+__unset()
+
+// Magic method to prepare an object for serialization
+__sleep()
+
+// Magic method to wake up an object after deserialization
+__wakeup()
+
+// Magic method to return the string representation of an object
+__toString()
+
+// Magic method to allow an object to be called as a function
+__invoke()
+
+// Magic method to control object serialization
+__set_state()
+
+// Magic method to clone an object
+__clone()
+
+// Magic method to return debugging information about an object
+__debugInfo()
+```
