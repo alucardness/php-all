@@ -30,6 +30,7 @@ Table of contents.
     - [Constructor Property Promotion](#constructor-property-promotion)
     - [Constants](#constants)
     - [Static Properties and Methods](#static-properties-and-methods)
+    - [Encapsulation and Abstraction](#encapsulation-and-abstraction)
 
 ## How to install PHP
 
@@ -724,3 +725,41 @@ Static properties and methods can be used in a variety of ways in PHP. Here are 
 4. Implementing singleton classes: Static methods can be used to implement singleton classes, which are classes that can
    only have one instance at any given time. This can be useful for implementing global objects, such as a logger or a
    configuration manager.
+
+### Encapsulation and Abstraction
+
+- Encapsulation in PHP is the process of combining properties and methods into a single class. This allows for data to
+  be protected from outside access, while still allowing the class to be used by other classes or functions.
+  Encapsulation also helps to reduce code complexity and improve code readability. It is an important concept in
+  object-oriented programming (OOP).
+
+```php
+class Hero {
+  // Private properties
+  private $name;
+  
+  // Constructor
+  public function __construct($name) {
+    $this->name = $name;
+  }
+  
+  // Getters and Setters
+  public function getName() {
+    return $this->name;
+  }
+  
+  public function setName($name) {
+    $this->name = $name;
+  }
+}
+```
+
+_Setters are considered bad practice because they can lead to code that is difficult to maintain and debug. Setters
+allow for the state of an object to be changed without any validation or control, which can lead to unexpected results
+and errors. Additionally, setters can make it difficult to track changes to an object's state over time, as there is no
+record of when and how the state was changed._
+
+- Abstraction
+
+_Abstraction in PHP is the process of hiding the implementation details from the user, only the functionality will be
+provided to the user._
