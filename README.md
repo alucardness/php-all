@@ -31,6 +31,7 @@ Table of contents.
     - [Constants](#constants)
     - [Static Properties and Methods](#static-properties-and-methods)
     - [Encapsulation and Abstraction](#encapsulation-and-abstraction)
+    - [Abstract Classes and Methods](#abstract-classes-and-methods)
 
 ## How to install PHP
 
@@ -763,3 +764,29 @@ record of when and how the state was changed._
 
 _Abstraction in PHP is the process of hiding the implementation details from the user, only the functionality will be
 provided to the user._
+
+### Abstract Classes and Methods
+
+```php
+// Abstract class for Hero objects
+abstract class Hero {
+  // Protected properties of the Hero object
+  protected $name;
+  protected $health;
+  protected $power;
+  
+  // Constructor to set up the Hero object
+  public function __construct($name, $health, $power) {
+    $this->name = $name;
+    $this->health = $health;
+    $this->power = $power;
+  }
+  
+  // Abstract method to be implemented by subclasses
+  abstract public function attack();
+}
+```
+
+_An abstract class in PHP is a class that cannot be instantiated, and must be extended by another class. Abstract
+classes are used to provide a base level of functionality that can be shared among multiple classes. They may contain
+abstract methods, which are methods without any implementation, and must be implemented by the extending class._
