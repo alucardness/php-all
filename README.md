@@ -35,6 +35,7 @@ Table of contents.
     - [Interfaces and Polymorphism](#interfaces-and-polymorphism)
     - [Magic Methods](#magic-methods)
     - [Late Static Binding](#late-static-binding)
+    - [Traits](#traits)
 
 ## How to install PHP
 
@@ -876,3 +877,62 @@ _Late static binding in PHP is a feature that allows static methods to be called
 runtime. This allows for more flexibility when dealing with inheritance, as it allows the child class to call the parent
 class's static methods without having to explicitly specify the parent class. It also allows for more dynamic code, as
 the class being called can be changed depending on the context._
+
+### Traits
+
+```php
+trait Logger {
+    public function log($message) {
+        echo $message;
+    }
+}
+ 
+class User {
+    use Logger;
+    
+    public function login() {
+        $this->log('User logged in');
+    }
+}
+```
+
+_The purpose of a trait in PHP is to provide a way to reuse code between classes. Traits allow you to define methods
+that can be used in multiple classes without having to copy and paste the same code into each class. In the example
+above, the Logger trait provides a log() method which can be used by the User class without having to define it again._
+
+- Calling a method that exists in at least two traits
+
+```php
+trait heroFly
+{
+    public function getSpeed()
+    {
+        $speed = rand(1, 10);
+        return "Hero speed: " . $speed;
+    }
+}
+
+trait villainFly
+{
+    public function getSpeed()
+    {
+        $speed = rand(11, 20);
+        return "Villain speed: " . $speed;
+    }
+}
+
+class Hero
+{
+    use heroFly, villainFly {
+        villainFly::getSpeed insteadof heroFly;
+    }
+
+    public function getHeroSpeed(): string
+    {
+        return $this->getSpeed();
+    }
+}
+
+$superman = new Hero();
+echo $superman->getHeroSpeed();
+```
