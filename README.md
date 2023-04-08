@@ -37,6 +37,7 @@ Table of contents.
     - [Late Static Binding](#late-static-binding)
     - [Traits](#traits)
     - [Anonymous Class](#anonymous-class)
+- [DocBlock](#docblock)
 
 ## How to install PHP
 
@@ -957,3 +958,23 @@ $hero = new class {
 _Anonymous classes in PHP are used to create objects without having to define a class first. This can be useful for
 creating simple, one-off objects that don't need to be reused or extended. Anonymous classes can also be used to quickly
 mock objects for testing purposes._
+
+## DocBlock
+
+```php
+/**
+ * Class Hero
+ * 
+ * @param string $name The name of the hero
+ * @param string $power The power of the hero
+ * @param string $weapon The weapon of the hero
+ */
+class Hero {
+    // ...
+    public function __construct(protected $name, protected $power, protected $weapon) {}
+}
+```
+
+_Docblock is a type of comment used in PHP to provide additional information about a function, class, or file. It is
+written in a specific format and contains information such as the purpose of the code, parameters, return values, and
+other notes. Docblocks are often used to generate documentation for a project._
