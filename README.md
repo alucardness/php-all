@@ -680,4 +680,5 @@ class Hero {
 }
 
 echo Hero::HERO_NAME; // Superman
+echo Hero::class; // call class's full path
 ```
