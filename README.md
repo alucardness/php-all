@@ -34,6 +34,7 @@ Table of contents.
     - [Abstract Classes and Methods](#abstract-classes-and-methods)
     - [Interfaces and Polymorphism](#interfaces-and-polymorphism)
     - [Magic Methods](#magic-methods)
+    - [Late Static Binding](#late-static-binding)
 
 ## How to install PHP
 
@@ -851,3 +852,27 @@ __clone()
 // Magic method to return debugging information about an object
 __debugInfo()
 ```
+
+### Late Static Binding
+
+```php
+class Hero {
+    public static function battleCry() {
+        echo "FIGHT!";
+    }
+}
+
+class SuperHero extends Hero {
+    public static function battleCry() {
+        echo "IT'S HERO TIME!";
+    }
+}
+
+$hero = new Hero();
+$hero::battleCry(); // Outputs: IT'S HERO TIME!
+```
+
+_Late static binding in PHP is a feature that allows static methods to be called on a class that is determined at
+runtime. This allows for more flexibility when dealing with inheritance, as it allows the child class to call the parent
+class's static methods without having to explicitly specify the parent class. It also allows for more dynamic code, as
+the class being called can be changed depending on the context._
