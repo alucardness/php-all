@@ -37,6 +37,7 @@ Table of contents.
     - [Late Static Binding](#late-static-binding)
     - [Traits](#traits)
     - [Anonymous Class](#anonymous-class)
+    - [Clone Objects](#clone-objects)
 - [DocBlock](#docblock)
 
 ## How to install PHP
@@ -958,6 +959,32 @@ $hero = new class {
 _Anonymous classes in PHP are used to create objects without having to define a class first. This can be useful for
 creating simple, one-off objects that don't need to be reused or extended. Anonymous classes can also be used to quickly
 mock objects for testing purposes._
+
+### Clone Objects
+
+```php
+class Hero {
+  public $name;
+  public $id;
+  
+  public function __construct($name) {
+    $this->name = $name;
+    $this->id = uniqid();
+  }
+  
+  public function __clone() {
+    $this->id = uniqid();
+  }
+}
+
+$hero1 = new Hero('Superman');
+$hero2 = clone $hero1;
+
+echo $hero1->id . '<br>';
+echo $hero2->id;
+```
+
+_The `__clone()` method is used to create a clone of the object and assign it a new unique id._
 
 ## DocBlock
 
