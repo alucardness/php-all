@@ -39,6 +39,7 @@ Table of contents.
     - [Anonymous Class](#anonymous-class)
     - [Clone Objects](#clone-objects)
     - [Serialize Objects](#serialize-objects)
+    - [Iterate Over Objects](#iterate-over-objects)
 - [DocBlock](#docblock)
 - [Exceptions](#exceptions)
 
@@ -993,6 +994,56 @@ _The `__clone()` method is used to create a clone of the object and assign it a 
 _The purpose of serializing objects in PHP is to convert an object into a string representation, which can then be
 stored in a database or file, and later retrieved and converted back into an object. This allows for the object's state
 to be preserved across multiple requests._
+
+### Iterate over Objects
+
+```php
+class Hero
+{
+    public $name;
+    public $power;
+    public $weapon;
+
+    public function __construct($name, $power, $weapon)
+    {
+        $this->name = $name;
+        $this->power = $power;
+        $this->weapon = $weapon;
+    }
+}
+
+$heroes = [
+    new Hero('Superman', 'super strength', 'heat vision'),
+    new Hero('Wonder Woman', 'superhuman strength', 'lasso of truth'),
+    new Hero('Batman', 'genius-level intellect', 'utility belt')
+];
+
+class HeroesCollection implements IteratorAggregate
+{
+    private $heroes;
+
+    public function __construct($heroes)
+    {
+        $this->heroes = $heroes;
+    }
+
+    public function getIterator()
+    {
+        return new ArrayIterator($this->heroes);
+    }
+}
+
+$heroesCollection = new HeroesCollection($heroes);
+
+foreach ($heroesCollection as $hero) {
+    echo $hero->name . ' has ' . $hero->power . ' and uses a ' . $hero->weapon . "<br>";
+}
+
+// Prints:
+// Superman has super strength and uses a heat vision
+// Wonder Woman has superhuman strength and uses a lasso of truth
+// Batman has genius-level intellect and uses a utility belt
+```
 
 ## DocBlock
 
