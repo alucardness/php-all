@@ -38,7 +38,9 @@ Table of contents.
     - [Traits](#traits)
     - [Anonymous Class](#anonymous-class)
     - [Clone Objects](#clone-objects)
+    - [Serialize Objects](#serialize-objects)
 - [DocBlock](#docblock)
+- [Exceptions](#exceptions)
 
 ## How to install PHP
 
@@ -986,6 +988,12 @@ echo $hero2->id;
 
 _The `__clone()` method is used to create a clone of the object and assign it a new unique id._
 
+### Serialize Objects
+
+_The purpose of serializing objects in PHP is to convert an object into a string representation, which can then be
+stored in a database or file, and later retrieved and converted back into an object. This allows for the object's state
+to be preserved across multiple requests._
+
 ## DocBlock
 
 ```php
@@ -1005,3 +1013,28 @@ class Hero {
 _Docblock is a type of comment used in PHP to provide additional information about a function, class, or file. It is
 written in a specific format and contains information such as the purpose of the code, parameters, return values, and
 other notes. Docblocks are often used to generate documentation for a project._
+
+## Exceptions
+
+```php
+// Exception is the base class for all Exceptions
+// ErrorException is thrown when a error occurs at runtime
+// ParseError is thrown when an error occurs while parsing
+// TypeError is thrown when an argument is of wrong type
+// ArgumentCountError is thrown when too few arguments are passed to a function
+// ArithmeticError is thrown when an arithmetic operation fails
+// DivisionByZeroError is thrown when a division by zero occurs
+// AssertionError is thrown when an assertion fails
+// ClosureThrowableError is thrown when an error occurs in a closure
+// GeneratorThrowableError is thrown when an error occurs in a generator
+// PDOException is thrown when an error occurs with a PDO operation
+// SoapFault is thrown when an error occurs with a SOAP operation
+// DOMException is thrown when an error occurs with a DOM operation
+// IntlException is thrown when an error occurs with an internationalization operation
+// ReflectionException is thrown when an error occurs with a reflection operation
+// PHP_User_Deprecated is thrown when a deprecated feature is used
+// PHP_User_Error is thrown when a user-defined error occurs
+// PHP_User_Notice is thrown when a user-defined notice occurs
+// PHP_User_Warning is thrown when a user-defined warning occurs
+// JsonException is thrown when an error occurs with a JSON operation
+```
