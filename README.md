@@ -25,6 +25,9 @@ Table of contents.
 - [Working with Files](#working-with-files)
 - [Setup Project](#setup-project)
 - [Coding Standards, Autoloading and Composer](#coding-standards-autoloading-and-composer)
+- [DocBlock](#docblock)
+- [Exceptions](#exceptions)
+- [Superglobals](#superglobals)
 - Objects
     - [Chaining Methods](#chaining-methods)
     - [Constructor Property Promotion](#constructor-property-promotion)
@@ -40,8 +43,6 @@ Table of contents.
     - [Clone Objects](#clone-objects)
     - [Serialize Objects](#serialize-objects)
     - [Iterate Over Objects](#iterate-over-objects)
-- [DocBlock](#docblock)
-- [Exceptions](#exceptions)
 
 ## How to install PHP
 
@@ -631,6 +632,19 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 ```shell
 composer dump-autoload
+```
+
+## Superglobals
+
+```php
+$_SERVER // stores information about headers, paths, and script locations
+$_GET // used to collect data after a form has been submitted using the GET method
+$_POST // used to collect data after a form has been submitted using the POST method
+$_FILES // used to store information about files uploaded by the user
+$_COOKIE // used to store small pieces of information in the user's browser
+$_SESSION // used to store session variables set by the user
+$_REQUEST // used to collect data from both the GET and POST methods
+$_ENV // used to store environment variables set by the server
 ```
 
 ## Objects
