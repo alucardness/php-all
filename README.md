@@ -28,6 +28,7 @@ Table of contents.
 - [DocBlock](#docblock)
 - [Exceptions](#exceptions)
 - [Superglobals](#superglobals)
+- [Database](#database)
 - Objects
     - [Chaining Methods](#chaining-methods)
     - [Constructor Property Promotion](#constructor-property-promotion)
@@ -646,6 +647,48 @@ $_SESSION // used to store session variables set by the user
 $_REQUEST // used to collect data from both the GET and POST methods
 $_ENV // used to store environment variables set by the server
 ```
+
+## Database
+
+- PDO (PHP Data Objects) is a PHP extension that provides an interface for accessing databases in an object-oriented
+  way. It allows developers to write code that can interact with different types of databases, such as MySQL,
+  PostgreSQL, and SQLite, without having to write specific code for each type of database. PDO also provides a layer of
+  security by using prepared statements to protect against SQL injection attacks.
+
+
+  Setup:
+  ```php
+    // Database connection variables
+    
+    $host = 'localhost'; 
+    $dbname = 'my_database'; 
+    $username = 'my_username'; 
+    $password = 'my_password';
+    
+    // Establish database connection using PDO 
+    try { 
+        $conn = new \PDO("mysql:host=$host;dbname=$dbname", $username, $password); 
+        echo "Connected successfully"; 
+    } catch(\PDOException $e) { 
+        echo "Connection failed: " . $e->getMessage(); 
+    }
+  ```
+
+  Prepare Get Statement:
+  ```php
+  $stmt = $pdo->prepare('SELECT * FROM table_name WHERE id = :id');
+  $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+  $stmt->execute();
+  ```
+
+  Prepare Update Statement:
+  ```php
+  $stmt = $pdo->prepare('UPDATE table_name SET field1 = :field1, field2 = :field2 WHERE id = :id');
+  $stmt->bindParam(':field1', $field1);
+  $stmt->bindParam(':field2', $field2);
+  $stmt->bindParam(':id', $id);
+  $stmt->execute();
+  ```
 
 ## Objects
 
