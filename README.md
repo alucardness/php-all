@@ -711,6 +711,18 @@ Transactions:
   }
   ```
 
+Debugging:
+
+  ```php
+  $userId = 1;
+  $amount = 1;
+  $qry = 'INSERT INTO invoices (user_id, amount) VALUES (?, ?)';
+  $query = str_replace(array('?'), array('\'%s\''), $qry);
+  $query = vsprintf($query, [$userId, $amount]);
+  // $query will holds:
+  // INSERT INTO invoices (user_id, amount) VALUES ('1', '1')
+  ```
+
 _PDO transactions are a way to ensure that multiple related database operations are performed as a single unit. This
 means that either all of the operations will be completed successfully, or none of them will be executed at all.
 Transactions are useful for ensuring data integrity and consistency in databases. They can also help improve performance
