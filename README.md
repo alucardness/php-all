@@ -650,13 +650,15 @@ $_ENV // used to store environment variables set by the server
 
 ## Database
 
+- ~~MySQLi~~ - try to avoid it
+
 - PDO (PHP Data Objects) is a PHP extension that provides an interface for accessing databases in an object-oriented
   way. It allows developers to write code that can interact with different types of databases, such as MySQL,
   PostgreSQL, and SQLite, without having to write specific code for each type of database. PDO also provides a layer of
   security by using prepared statements to protect against SQL injection attacks.
 
+Setup:
 
-  Setup:
   ```php
     // Database connection variables
     
@@ -674,14 +676,16 @@ $_ENV // used to store environment variables set by the server
     }
   ```
 
-  Prepare Get Statement:
+Prepare Get Statement:
+
   ```php
   $stmt = $pdo->prepare('SELECT * FROM table_name WHERE id = :id');
   $stmt->bindParam(':id', $id, PDO::PARAM_INT);
   $stmt->execute();
   ```
 
-  Prepare Update Statement:
+Prepare Update Statement:
+
   ```php
   $stmt = $pdo->prepare('UPDATE table_name SET field1 = :field1, field2 = :field2 WHERE id = :id');
   $stmt->bindParam(':field1', $field1);
@@ -689,6 +693,28 @@ $_ENV // used to store environment variables set by the server
   $stmt->bindParam(':id', $id);
   $stmt->execute();
   ```
+
+Transactions:
+
+  ```php
+  $pdo = new \PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    
+  try {
+    $pdo->beginTransaction();
+    // Execute some SQL statements
+    // more code...
+    $pdo->commit();
+  } catch (Exception $e) {
+      if ($pdo->inTransaction()) {
+          $pdo->rollBack();
+      }
+  }
+  ```
+
+_PDO transactions are a way to ensure that multiple related database operations are performed as a single unit. This
+means that either all of the operations will be completed successfully, or none of them will be executed at all.
+Transactions are useful for ensuring data integrity and consistency in databases. They can also help improve performance
+by reducing the number of queries needed to complete a task._
 
 ## Objects
 
